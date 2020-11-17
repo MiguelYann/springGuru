@@ -19,6 +19,16 @@ public class Book {
             inverseJoinColumns = @JoinColumn(name = "author_id"))
     private Set<Author> authors;
 
+    public Book() {
+
+    }
+
+    public Book(String isBn, String title, Set<Author> authors) {
+        this.isBn = isBn;
+        this.title = title;
+        this.authors = authors;
+    }
+
     public Long getBookId() {
         return bookId;
     }
@@ -51,13 +61,4 @@ public class Book {
         this.authors = authors;
     }
 
-    public Book() {
-
-    }
-
-    public Book(String isBn, String title, Set<Author> authors) {
-        this.isBn = isBn;
-        this.title = title;
-        this.authors = authors;
-    }
 }

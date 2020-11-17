@@ -19,18 +19,18 @@ public class Author {
 
     }
 
+    public Author(String firstName, String lastName, Set<Book> books) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.books = books;
+    }
+
     public long getAuthorId() {
         return authorId;
     }
 
     public void setAuthorId(long authorId) {
         this.authorId = authorId;
-    }
-
-    public Author(String firstName, String lastName, Set<Book> books) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.books = books;
     }
 
     public String getFirstName() {
