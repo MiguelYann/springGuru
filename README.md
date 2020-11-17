@@ -1,5 +1,5 @@
 # SpringGuru
-Repository to master core concepts of SpringBoot and Sprig JPA
+Repository to master core concepts of SpringBoot and Spring JPA
 
 ## How to start project
  This project is an experimental project with a lot of things. His purpose it is not for openSource,
