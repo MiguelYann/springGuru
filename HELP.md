@@ -8,6 +8,7 @@ Repository to master core concepts of SpringBoot and Sprig JPA
 ## Concepts
 
 > No Lombok dependencies for the moment 😆
+> No Unit testing for the moment 😅
 
 * All about Spring Initialzr
 * What is behind JPA entities
