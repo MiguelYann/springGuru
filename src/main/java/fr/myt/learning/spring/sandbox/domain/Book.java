@@ -1,6 +1,7 @@
 package fr.myt.learning.spring.sandbox.domain;
 
 import javax.persistence.*;
+import java.util.Objects;
 import java.util.Set;
 
 @Entity
@@ -27,6 +28,19 @@ public class Book {
         this.isBn = isBn;
         this.title = title;
         this.authors = authors;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Book)) return false;
+        Book book = (Book) o;
+        return getBookId().equals(book.getBookId());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getBookId());
     }
 
     public Long getBookId() {
@@ -60,5 +74,4 @@ public class Book {
     public void setAuthors(Set<Author> authors) {
         this.authors = authors;
     }
-
 }
