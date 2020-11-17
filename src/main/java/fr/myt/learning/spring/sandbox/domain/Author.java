@@ -26,7 +26,6 @@ public class Author {
         this.books = books;
     }
 
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -38,6 +37,16 @@ public class Author {
     @Override
     public int hashCode() {
         return Objects.hash(authorId);
+    }
+
+    @Override
+    public String toString() {
+        return "Author{" +
+                "authorId=" + authorId +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", books=" + books +
+                '}';
     }
 
     public Long getAuthorId() {

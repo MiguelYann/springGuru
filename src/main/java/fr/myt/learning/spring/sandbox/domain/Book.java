@@ -43,6 +43,16 @@ public class Book {
         return Objects.hash(getBookId());
     }
 
+    @Override
+    public String toString() {
+        return "Book{" +
+                "bookId=" + bookId +
+                ", isBn='" + isBn + '\'' +
+                ", title='" + title + '\'' +
+                ", authors=" + authors +
+                '}';
+    }
+
     public Long getBookId() {
         return bookId;
     }
