@@ -1,9 +1,9 @@
 package fr.myt.learning.spring.sandbox.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 @Entity
 public class Publisher {
@@ -11,10 +11,15 @@ public class Publisher {
     @GeneratedValue
     private Long publisherId;
 
+    private String name;
     private String addressLine;
     private String city;
     private String state;
     private int zip;
+
+    @OneToMany
+    @JoinColumn(name = "publisher_id")
+    private Set<Book> books = new HashSet<>();
 
     public Publisher() {
     }
@@ -31,7 +36,7 @@ public class Publisher {
         if (this == o) return true;
         if (!(o instanceof Publisher)) return false;
         Publisher publisher = (Publisher) o;
-        return getPublisherId() == publisher.getPublisherId();
+        return getPublisherId().equals(publisher.getPublisherId());
     }
 
     @Override
@@ -45,6 +50,15 @@ public class Publisher {
 
     public void setPublisherId(Long publisherId) {
         this.publisherId = publisherId;
+    }
+
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getAddressLine() {
@@ -77,5 +91,13 @@ public class Publisher {
 
     public void setZip(int zip) {
         this.zip = zip;
+    }
+
+    public Set<Book> getBooks() {
+        return books;
+    }
+
+    public void setBooks(Set<Book> books) {
+        this.books = books;
     }
 }
