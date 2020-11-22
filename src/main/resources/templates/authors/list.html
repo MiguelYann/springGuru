@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Authors list</title>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <td>AuthorId</td>
+        <td>First Name</td>
+        <td>Last Name</td>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr th:each="author : ${authors}">
+        <td th:text="${author.getAuthorId()}"></td>
+        <td th:text="${author.getFirstName()}"></td>
+        <td th:text="${author.getLastName()}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
