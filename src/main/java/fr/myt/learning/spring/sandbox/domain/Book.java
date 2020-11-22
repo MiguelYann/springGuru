@@ -39,7 +39,7 @@ public class Book {
         if (this == o) return true;
         if (!(o instanceof Book)) return false;
         Book book = (Book) o;
-        return getBookId() == (book.getBookId());
+        return Objects.equals(getBookId(), book.getBookId());
     }
 
     @Override
