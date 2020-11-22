@@ -23,11 +23,11 @@ public class BootstrapData implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        Publisher firstPublisher = new Publisher("12 Rue Verte", "Bordeaux", "France", 33200);
+        Publisher firstPublisher = new Publisher("Eyrolles", "12 Rue Verte", "Bordeaux", "France", 33200);
         publisherRepository.save(firstPublisher);
 
         Author secondAuthor = new Author("Jen", "Hi");
-        Book kotlin = new Book("Kotlin Started", "344");
+        Book kotlin = new Book("123", "Kotlin Started");
         secondAuthor.getBooks().add(kotlin);
         kotlin.getAuthors().add(secondAuthor);
 
@@ -35,6 +35,11 @@ public class BootstrapData implements CommandLineRunner {
         firstPublisher.getBooks().add(kotlin);
         authorRepository.save(secondAuthor);
         bookRepository.save(kotlin);
+
+        Book book = new Book("1234", "Javascript getting started");
+        book.getAuthors().add(secondAuthor);
+        book.setPublisher(firstPublisher);
+        bookRepository.save(book);
 
 
         System.out.println(publisherRepository.count());

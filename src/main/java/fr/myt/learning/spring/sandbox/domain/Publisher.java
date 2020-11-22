@@ -24,7 +24,9 @@ public class Publisher {
     public Publisher() {
     }
 
-    public Publisher(String addressLine, String city, String state, int zip) {
+
+    public Publisher(String name, String addressLine, String city, String state, int zip) {
+        this.name = name;
         this.addressLine = addressLine;
         this.city = city;
         this.state = state;
